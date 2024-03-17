@@ -117,6 +117,8 @@ class RegularExpressionsTests {
 		assertTrue("+972532898069".matches(regex));
 
 		assertFalse("+97255289806".matches(regex));
+		assertFalse("+97255289806-9".matches(regex));
+		assertFalse("+972-5-5-2-8-9-8-0-6-9".matches(regex));
 		assertFalse("552898069".matches(regex));
 		assertFalse("1552898069".matches(regex));
 		assertFalse("055 2898069".matches(regex));

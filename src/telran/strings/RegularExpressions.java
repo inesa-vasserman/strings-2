@@ -20,14 +20,11 @@ public class RegularExpressions {
 	public static String ipOptet() {
 		
 		return "\\d|[0-1]\\d\\d?|2[0-4]\\d|25[0-5]";
-		
-		//TODO
-		//1 - 3 symbols presenting number from 0 - 255 + 000
 	}
 	
 	public static String mobileIsraelPhone() {
-		//+972-5>-<7
-		return "(\\+972-?|0)[-]?5(\\d[-]?){8}";
+		//+972-5>-<7   +97255 28 980 69  289 80 69   28 980 69 28 98 069 
+		return "(\\+972-?|0)5\\d[-]?(\\d{3}-?\\d{2}-?\\d{2}|\\d{2}-?\\d{3}-?\\d{2}|(\\d{2}-?){2}-?\\d{3})";
 	}
 	
 	
