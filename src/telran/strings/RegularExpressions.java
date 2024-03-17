@@ -1,6 +1,6 @@
 package telran.strings;
 
-public class RegularExprecions {
+public class RegularExpressions {
 	
 	public static String javaVariable() {
 		
@@ -13,12 +13,13 @@ public class RegularExprecions {
 	public static String zero_300() {
 		
 		String regex = "[1-9]\\d?|[1-2]\\d\\d|300|0";
-		return null;
+		return regex;
 		
 	}
 	
 	public static String ipOptet() {
-		return null;
+		
+		return "\\d|[0-1]\\d\\d?|2[0-4]\\d|25[0-5]";
 		
 		//TODO
 		//1 - 3 symbols presenting number from 0 - 255 + 000
@@ -26,7 +27,7 @@ public class RegularExprecions {
 	
 	public static String mobileIsraelPhone() {
 		//+972-5>-<7
-		return null;
+		return "(\\+972-?|0)[-]?5(\\d[-]?){8}";
 	}
 	
 	

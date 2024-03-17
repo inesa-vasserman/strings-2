@@ -2,17 +2,16 @@ package telran.strings.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import telran.strings.RegularExprecions;
+import telran.strings.RegularExpressions;
 
-class RegularExprecionsTests {
+class RegularExpressionsTests {
 
 	@Test
 	void javaVariableTrueTest() {
 		
-		String regex = RegularExprecions.javaVariable();
+		String regex = RegularExpressions.javaVariable();
 		assertTrue("abc".matches(regex));
 		assertTrue("Abc".matches(regex));
 		assertTrue("abc_".matches(regex));
@@ -27,7 +26,7 @@ class RegularExprecionsTests {
 	@Test
 	void javaVariableFalseTest() {
 		
-		String regex = RegularExprecions.javaVariable();
+		String regex = RegularExpressions.javaVariable();
 		assertFalse("1abc".matches(regex));
 		assertFalse("_".matches(regex));
 		assertFalse("a-2".matches(regex));
@@ -40,7 +39,7 @@ class RegularExprecionsTests {
 	@Test 
 	void zero_300TestTrue() {
 		
-		String regex = RegularExprecions.zero_300();
+		String regex = RegularExpressions.zero_300();
 		assertTrue("0".matches(regex));
 		assertTrue("1".matches(regex));
 		assertTrue("19".matches(regex));
@@ -53,7 +52,7 @@ class RegularExprecionsTests {
 	@Test 
 	void zero_300TestFalse() {
 		
-		String regex = RegularExprecions.zero_300();
+		String regex = RegularExpressions.zero_300();
 		assertFalse("00".matches(regex));
 		assertFalse("01".matches(regex));
 		assertFalse("19s".matches(regex));
@@ -68,7 +67,7 @@ class RegularExprecionsTests {
 	@Test
 	void ipOctetTest() {
 		
-		String regex = RegularExprecions.ipOptet();
+		String regex = RegularExpressions.ipOptet();
 
 		assertTrue("0".matches(regex));
 		assertTrue("00".matches(regex));
@@ -86,7 +85,7 @@ class RegularExprecionsTests {
 	@Test
 	void ipOctetFalse() {
 		
-		String regex = RegularExprecions.ipOptet();
+		String regex = RegularExpressions.ipOptet();
 
 		assertFalse("-0".matches(regex));
 		assertFalse("00 ".matches(regex));
@@ -99,6 +98,32 @@ class RegularExprecionsTests {
 		assertFalse("260".matches(regex));
 		assertFalse("256".matches(regex));
 		
+	}
+	
+	@Test
+	void mobileIsraelPhoneTest() {
+		
+		//+972-5>-<7
+		String regex = RegularExpressions.mobileIsraelPhone();
+		
+		assertTrue("+972552898069".matches(regex));
+		assertTrue("+972-552898069".matches(regex));
+		assertTrue("+972-55-289-80-69".matches(regex));
+		assertTrue("0552898069".matches(regex));
+		assertTrue("055-289-80-69".matches(regex));
+		assertTrue("+972562898069".matches(regex));
+		assertTrue("+972572898069".matches(regex));
+		assertTrue("+972502898069".matches(regex));
+		assertTrue("+972532898069".matches(regex));
+
+		assertFalse("+97255289806".matches(regex));
+		assertFalse("552898069".matches(regex));
+		assertFalse("1552898069".matches(regex));
+		assertFalse("055 2898069".matches(regex));
+		assertFalse("+972_55_289_8069".matches(regex));
+		assertFalse("+972802898069".matches(regex));
+		assertFalse("+9835289806".matches(regex));
+
 	}
 
 }
