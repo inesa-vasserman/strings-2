@@ -73,11 +73,6 @@ public class RegularExpressions {
 	    return String.format("%4$s%1$s(%2$s%4$s%1$s%4$s)*%4$s", combinationTwoVars, operation, javaVariable, spaceBrackets);    
 	}
 	
-//	    return String.format("\\(*(%1$s|%3$s)(\\(*%2$s\\(*(%1$s|%3$s)\\)*)*\\)*", operand, operation, javaVariable);    
-	
-//    return String.format("%4$s(%1$s|%3$s)(%2$s%4$s(%1$s|%3$s)%4$s)*%4$s", operand, operation, javaVariable, spaceBrackets);    
-
-
 	                         
 	
 	

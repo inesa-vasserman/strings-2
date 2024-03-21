@@ -174,7 +174,6 @@ class RegularExpressionsTests {
 		assertFalse("2 + a12 *".matches(regex));
 		assertFalse("2 + )a12 *".matches(regex));
 
-
 	}
 
 }
